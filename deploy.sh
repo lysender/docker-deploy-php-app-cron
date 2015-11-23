@@ -21,8 +21,8 @@ __run_pull() {
 
 if [ -d /var/www/html/.git ]
 then
-    __run_pull
+    __run_pull >> /var/log/deploy-agent/deploy.log 2>&1
 else
-    __run_clone
+    __run_clone >> /var/log/deploy-agent/deploy.log 2>&1
 fi
 
